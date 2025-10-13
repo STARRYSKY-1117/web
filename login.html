@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>登录</title>
+</head>
+
+<body class="loginBody">
+
+  <main>
+    <div class="search-wrapper">
+      <div class="logoBox">
+        <img src="./images/logo.jpg" alt="">
+        <p class="logo"> 尽情热爱~</p>
+      </div>
+      <div class="search">
+        <input type="text" value="" />
+        <button type="button"><i></i><span>搜索</span></button>
+      </div>
+    </div>
+    <div class="swipper">
+      <ul class="imgList">
+        <li class="imgList-item active"><img src="images/banner.jpg" alt=""></li>
+      </ul>
+    </div>
+    <nav>
+      <ul class="navMenu">
+        <li>
+          <a href="index.html">首页</a>
+        </li>
+        <li>
+          <a href="about.html">新疆百科</a>
+        </li>
+        <li>
+          <a href="food.html">美食介绍</a>
+        </li>
+        <li>
+          <a href="custom.html">文化风俗</a>
+        </li>
+        <li><a href="contact.html">联系我们</a></li>
+        <li class="current"><a href="login.html">登录</a></li>
+        <li><a href="register.html">注册</a></li>
+      </ul>
+    </nav>
+    <div class="content">
+      <div class="container">
+        <div class="login">
+          <h2>登 录</h2>
+          <form>
+            <input type="text" name="Userame" placeholder="用户名" required="" value="">
+            <input type="password" name="Password" placeholder="密码" required="" value="">
+          </form>
+          <ul class="tick">
+            <li>
+              <input type="checkbox" id="brand1" value="">
+              <label for="brand1"><span></span>记住我</label>
+            </li>
+          </ul>
+          <div class="send-button">
+            <input type="submit" value="登 录">
+          </div>
+          <div class="wang">
+            <a href="#">忘记密码?</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>CopyRight © 2025 ALL Rights</p>
+      <p>中国省份介绍网站 |川ICP证00000</p>
+    </footer>
+  </main>
+</body>
+<script>
+  // 获取表单元素
+  const loginForm = document.querySelector('.login form');
+  const usernameInput = document.querySelector('input[name="Userame"]');
+  const passwordInput = document.querySelector('input[name="Password"]');
+
+  // 表单提交事件处理函数
+  const handleSubmit = (event) => {
+    event.preventDefault(); // 阻止表单提交的默认行为
+
+    // 校验用户名和密码是否为空
+    const username = usernameInput.value.trim();
+    const password = passwordInput.value.trim();
+
+    if (username === '' || password === '') {
+      alert('用户名和密码不能为空');
+      return;
+    }
+
+    // 校验密码长度是否小于六位
+    if (password.length < 6) {
+      alert('密码不能低于六位');
+      return;
+    }
+
+    // 表单校验通过，可以继续进行登录操作
+    alert('登录成功');
+    window.location.href = 'index.html'; // 跳转到 index.html
+  };
+  // 获取表单提交按钮
+  const loginButton = document.querySelector('.send-button input[type="submit"]');
+
+  // 绑定点击事件
+  loginButton.addEventListener('click', handleSubmit);
+
+
+</script>
+
+</html>
